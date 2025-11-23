@@ -1,0 +1,30 @@
+.about-full-page {
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-full-container {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  gap: 40px;
+}
+
+.about-full-img img {
+  width: 420px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-full-content h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.about-full-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+}
