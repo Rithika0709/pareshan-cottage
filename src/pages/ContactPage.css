@@ -1,8 +1,82 @@
 .contact-page {
-  padding: 60px 20px;
+  padding: 48px 16px 60px;
   max-width: 1200px;
   margin: auto;
   font-family: Arial, sans-serif;
+}
+
+/* Mobile Responsive Contact Page */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 32px 16px;
+  }
+  .contact-title {
+    font-size: 36px;
+    margin-bottom: 35px;
+  }
+  .contact-info {
+    padding: 20px;
+  }
+  .contact-map {
+    height: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 22px 12px;
+    max-width: 100%;
+  }
+  .contact-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+  .contact-info {
+    padding: 16px;
+  }
+  .contact-info h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .contact-info p {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .whatsapp-btn {
+    padding: 9px 16px;
+    font-size: 15px;
+  }
+  .contact-map {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 18px 8px;
+  }
+  .contact-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .contact-info {
+    padding: 12px;
+  }
+  .contact-info h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .contact-info p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .whatsapp-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+  .contact-map {
+    height: 250px;
+  }
 }
 
 .contact-title {
@@ -15,17 +89,26 @@
 
 /* Main container */
 .contact-container {
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    gap: 12px;
+  }
 }
 
 /* LEFT SIDE INFO BOX */
 .contact-info {
-  flex: 1;
-  min-width: 300px;
   background: #ffffff;
   padding: 30px;
   border-radius: 16px;
@@ -66,8 +149,6 @@
 
 /* RIGHT SIDE MAP */
 .contact-map {
-  flex: 1;
-  min-width: 350px;
   height: 450px;   /* Increased height */
   border-radius: 16px;
   overflow: hidden;

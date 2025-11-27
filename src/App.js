@@ -15,17 +15,44 @@ import ContactPage from "./pages/ContactPage";
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNavLinkClick = () => setIsMenuOpen(false);
 
   return (
     <div>
 
       {/* NAVBAR */}
-      <nav className="navbar">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/gallery">Gallery</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+      <nav className={`navbar ${isMenuOpen ? "menu-open" : ""}`}>
+        <div className="navbar-bar">
+          <Link to="/" className="navbar-logo" onClick={handleNavLinkClick}>
+            Pareshan Boys Cottage
+          </Link>
+          <button
+            className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+        <ul className={`navbar-links ${isMenuOpen ? "open" : ""}`}>
+          <li>
+            <Link to="/" onClick={handleNavLinkClick}>Home</Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={handleNavLinkClick}>About</Link>
+          </li>
+          <li>
+            <Link to="/gallery" onClick={handleNavLinkClick}>Gallery</Link>
+          </li>
+          <li>
+            <Link to="/contact" onClick={handleNavLinkClick}>Contact</Link>
+          </li>
         </ul>
       </nav>
 
@@ -60,6 +87,12 @@ function App() {
                   <p className="tagline">
                     Stay with comfort. Leave with memories.
                   </p>
+                <ul className="hero-features">
+                  <li>Secure & peaceful stay</li>
+                  <li>Temple & dam nearby</li>
+                  <li>24/7 assistance</li>
+                  <li>Group & family friendly</li>
+                </ul>
                 </div>
               </section>
 
@@ -139,6 +172,23 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
 
       </Routes>
+
+      <footer className="site-footer">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <h3>Pareshan Boys Cottage</h3>
+            <p>Comfortable stays near Srisailam Dam & Mallikarjuna Swamy Temple.</p>
+          </div>
+          <div className="footer-links">
+            <a href="https://wa.me/917793997673" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+            <a href="tel:+917793997673">Call Us</a>
+            <Link to="/contact">Contact Page</Link>
+          </div>
+        </div>
+        <p className="footer-copy">© {new Date().getFullYear()} Pareshan Boys Cottage. All rights reserved.</p>
+      </footer>
 
     </div>
   );
